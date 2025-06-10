@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebAPIASPTemplate.API.DAL\WebAPIASPTemplate.API.DAL.csproj" />
+    <ProjectReference Include="..\WebAPIASPTemplate.API.Domain\WebAPIASPTemplate.API.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
