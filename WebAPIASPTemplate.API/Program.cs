@@ -14,6 +14,7 @@ namespace WebAPIASPTemplate.API
             builder.AddRepositores();
             builder.AddServices();
             builder.AddODataProperty();
+            builder.AddHostedService();
             builder.Services.AddDbContext<AppDBContext>(opt => opt.UseNpgsql(
                 builder.Configuration.GetConnectionString(StandartConst.NameConnection)));
 
@@ -29,7 +30,6 @@ namespace WebAPIASPTemplate.API
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
-
             app.AddMiddleware();
 
             app.MapControllers();
