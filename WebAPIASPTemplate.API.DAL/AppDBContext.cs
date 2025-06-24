@@ -1,21 +1,14 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using WebAPIASPTemplate.API.Domain.Entities;
 
 namespace WebAPIASPTemplate.API.DAL
 {
+    //add-migration create -context AppDBContext
+    //update - database
     public class AppDBContext : DbContext
     {
         public DbSet<TemplateEntity> TemplateEntities { get; set; }
-
-        public void UpdateDatabase()
-        {
-            //add-migration create -context AppDBContext
-            //update - database
-
-            Database.EnsureDeleted();
-            Database.Migrate();
-        }
 
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {

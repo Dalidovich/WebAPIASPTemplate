@@ -1,5 +1,5 @@
-﻿using System.Net;
-using Npgsql;
+﻿using Npgsql;
+using System.Net;
 using WebAPIASPTemplate.API.Domain.DTO;
 
 namespace WebAPIASPTemplate.API.Midlaware

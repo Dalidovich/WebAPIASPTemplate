@@ -5,6 +5,7 @@ using WebAPIASPTemplate.API.BLL.Services;
 using WebAPIASPTemplate.API.DAL.Repositories.Implements;
 using WebAPIASPTemplate.API.DAL.Repositories.Interfaces;
 using WebAPIASPTemplate.API.Domain.Entities;
+using WebAPIASPTemplate.API.HostedServices;
 using WebAPIASPTemplate.API.Midlaware;
 
 namespace WebAPIASPTemplate.API
@@ -33,10 +34,15 @@ namespace WebAPIASPTemplate.API
             });
         }
 
+        public static void AddHostedService(this WebApplicationBuilder webApplicationBuilder)
+        {
+            webApplicationBuilder.Services.AddHostedService<CheckDBHostedService>();
+            webApplicationBuilder.Services.AddHostedService<EnterSeedDataHostedService>();
+        }
+
         public static void AddMiddleware(this WebApplication webApplication)
         {
             webApplication.UseMiddleware<ExceptionHandlingMiddleware>();
-            webApplication.UseMiddleware<CheckDBMiddleware>();
         }
     }
 }
