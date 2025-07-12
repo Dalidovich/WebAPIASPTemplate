@@ -17,7 +17,7 @@ namespace WebAPIASPTemplate.API.Controllers
 
         [HttpGet("odata/TemplateEntity")]
         [EnableQuery]
-        public IQueryable<TemplateEntity> GetComment()
+        public IQueryable<TemplateEntity> GetTemplateEntities()
         {
             return _templateEntityService.GetTemplateEntityOData().Data;
         }
